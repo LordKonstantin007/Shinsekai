@@ -1,6 +1,6 @@
 # 2D-Spiel: Shinsekai (Unity,C#)
 
-Shinskai ist ein Indie 2D-Spielprojekt erstellt von Konstantin Reuschenbach und Cyrus Szablowski. Das Projekt befindet sich in einem Zustand, sodass man von keiner Vollversion sprechen kann. Die neueste Version momentan ist Shinsekai v.0.2.3p. Hierbei handelt es sich um ein Open World 2d Survival "Game". 
+Shinsekai ist ein Indie 2D-Spielprojekt erstellt von Konstantin Reuschenbach und Cyrus Szablowski. Das Projekt befindet sich in einem Zustand, sodass man von keiner Vollversion sprechen kann. Die neueste Version momentan ist Shinsekai v.0.2.3p. Hierbei handelt es sich um ein Open World 2d Survival "Game". 
 
 ![Game-Banner](images/Shinsekai1.png)
 
@@ -21,7 +21,7 @@ https://github.com/LordKonstantin007/Arbeits-Log-2dgame
 
 
 ## Spielscenen (Hauptmenü, Spiel)
-Es gibt momentan zwei Scenen, eine Welt wird nach betätigen des "NEW WORLD Knopfs" generiert, dabei wird von der Hauptmenüscene in die Game Scene gewechselt:
+Es gibt momentan zwei Scenen, eine Welt wird nach betätigen des "NEW WORLD Knopfs" generiert, dabei wird von der Hauptmenü-Scene in die Game Scene gewechselt:
 ![Main Menu](images/MainMenu.PNG)
 ```
 using System.Collections;
@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
 }
 
 ```
-Es gibt zwei Scenen, das Hauptmenü und das Spiel besitzen jeweils eine Index Nummer welche über den Scene Manager geladen werden können. Die Scenen lassen sich in den Build Settings verwalten. Die Funktion PlayGame() wird aufegrufen, wenn man auf den Play New Game Button klickt wird. Und wenn man auf den Quit button klickt wird das Spiel geschlossen. 
+Es gibt zwei Scenen, das Hauptmenü und das Spiel besitzen jeweils eine Index Nummer welche über den Scene Manager geladen werden können. Die Scenen lassen sich in den Build Settings verwalten. Die Funktion PlayGame() wird aufgerufen, wenn man auf den Play New Game Button klickt wird. Und wenn man auf den Quit button klickt wird das Spiel geschlossen. 
 ## Spieler Bewegung und Spielcharakter
 Dieser Part funktioniert bisher nicht sehr gut, wir haben relativ viele verschiedene (um die 10) Character Controller Script generell ausprobiert, bisher gab es kein gutes Ergebnis, das ist auch kein finaler Script aber es ist nun so wie es ist. Das Charakter Model im Spiel ist momentan ein Dummy. 
 
@@ -153,7 +153,7 @@ Die Welt wird über zwei Scripte hauptächlich generiert. Generate.Chunk.cs und 
 
 ### Generate.Chunks
 Dieses Script ist für die Erstellung verschiedener Chunks verantwortlich, dazu wird das GenerateChunk Scipt geladen als Grundlage/Anleitung unter welchen Regeln die Chunks generiert werden sollen. Dazu haben wir ein Chunk-Prefab eingerichtet welches dann im Scipt aufgegriffen wird.
-Für den Anfang haben wir die Möglichkeit erstellt die Anzahl der generierten Chunks und deren Breite zu bestimmen. Dabei gibt es 200000 Mögliche Erscheinungsarten dieser Welten auch Seeds genannt. Diese Seeds werden durch ein RNG (Random Number Generator) Pattern zufällig ausgewählt, sobald die Spiel-Scene gestartet wird. Die Chunks werden dabei jeweils am rechten Ende bzw. an der letzten x-Position angeknüpft. Somit ist die erstellte Welt endlich. 
+Für den Anfang haben wir die Möglichkeit erstellt die Anzahl der generierten Chunks und deren Breite zu bestimmen. Dabei gibt es 200000 Mögliche Erscheinungsarten dieser Welten auch Seeds genannt. Diese Seeds werden durch ein RNG (Random Number Generator) zufällig ausgewählt, sobald die Spiel-Scene gestartet wird. Die Chunks werden dabei jeweils am rechten Ende bzw. an der letzten x-Position angeknüpft. Somit ist die erstellte Welt endlich. 
 ```
 using UnityEngine;
 using System.Collections;
@@ -190,7 +190,7 @@ using System.Collections;
 
 public class GenerateChunk : MonoBehaviour {
 ```
- Dem Chunk Prefab werden zunächst verschiedene Tiles hinzugefügt, aus diesen Tiles wird die Welt zusammengebaut. Zudem werden mehrere verstellbare Variablen erstellt: Width, Height Multiplier, Height Addition und Smoothness. Desweiteren erstellen wir Variablen mit welchen wir die genreierungs Wahrscheinlichkeiten von Erzen verstellen können. Es ist besser Variablen die sich in Unity verstellen lassen einzufügen, da man dadurch nicht das Script mehrmals aktualisieren muss:
+ Dem Chunk Prefab werden zunächst verschiedene Tiles hinzugefügt, aus diesen Tiles wird die Welt zusammengebaut. Zudem werden mehrere verstellbare Variablen erstellt: Width, Height Multiplier, Height Addition und Smoothness. Desweiteren erstellen wir Variablen mit welchen wir die Generierungs-Wahrscheinlichkeiten von Erzen verstellen können. Es ist besser Variablen die sich in Unity verstellen lassen einzufügen, da man dadurch nicht das Script mehrmals aktualisieren muss:
 ```
 	public GameObject DirtTile;
 	public GameObject GrassTile;
